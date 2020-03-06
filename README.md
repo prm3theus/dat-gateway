@@ -105,7 +105,9 @@ This also means that all dats will share the same localStorage and indexedDB ins
 
 In order to resolve these issues, you can use the `--redirect` flag in conjunction with the `host` parameter to have each dat served on a subdomain.
 
-e.g. $ `dat-gateway --redirect true`
+e.g. 
+
+`$ dat-gateway --redirect true`
 
 For example, `http://{host}:{port}/{datkey}/index.html` will be redirected to `http://{datkey32}.{host}:{port}/index.html` which will serve the file from localhost, but at a different domain, ensuring the browser isolates all the contents from each other.
 
