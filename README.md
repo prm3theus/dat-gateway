@@ -107,7 +107,9 @@ In order to resolve these issues, you can use the `--redirect` flag in conjuncti
 
 e.g. 
 
-`$ dat-gateway --redirect true`
+```
+$ dat-gateway --redirect true
+```
 
 For example, `http://{host}:{port}/{datkey}/index.html` will be redirected to `http://{datkey32}.{host}:{port}/index.html` which will serve the file from localhost, but at a different domain, ensuring the browser isolates all the contents from each other.
 
