@@ -201,6 +201,16 @@ class DatGateway extends DatLibrarian {
           res.writeHead(200)
           return res.end(welcome)
         }
+        // added status
+        if (pathParts[0] === 'status') {
+          // console.log('here')
+          res.setHeader('Content-Type', 'application/json');
+          // console.log(req.headers)
+          const status = `${req.headers.host},${200}`
+          return res.end(JSON.stringify({ STATUS: status }));
+          // res.writeHead(200)
+          // return res.end(welcome)
+        }
 
         // redirect /:key to /:key/
         if (!isRedirected && pathParts.length === 1 && !pathParts[0].endsWith('/') && pathParts[0] !== 'favicon.ico') {
