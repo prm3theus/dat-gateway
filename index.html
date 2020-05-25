@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html style="background-color: #eee">
 <head>
-  <title>dat-gateway</title>
+  <title>futures</title>
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/bulma@0.7.4/css/bulma.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.css">
   <script>
@@ -32,8 +32,11 @@
       }
     }
 
-    function navigateUrl() {
-      var url = document.querySelector("input").value;
+    function navigateUrl(url) {
+      if(!url){
+        url = document.querySelector("input").value;
+      }
+
       var cleaned = url.replace(/^dat:\/\//, "");
       window.location.href = "/" + cleaned;
       return false;
@@ -41,30 +44,29 @@
   </script>
 </head>
 <body onload="return handleLoaded()">
-  <section class="section">
-    <div class="container box" style="max-width:480px">
-      <h1 class="title">dat-gateway</h1>
-      <p class="subtitle">portal to a decentralized web</p>
+  <section class="section" style="padding: 10rem 10rem;">
+    <div class="" style="max-width:480px">
+      <h1 class="title">portal directory</h1>
+
+      <p class="subtitle">collective commerce</p>
+      <ul>
+        <li><a onclick="return navigateUrl('dat://d0376bf19864c8cf3d25b3ecfe66d2b4d1d3fc675e57489a84eecc5cb4b3dc5d')">basic shop</a></li>
+        <li> <i>your_shop_here</i></li>
+      </ul>
       <div class="content">
-        <p>You can use this gateway to visit content hosted over the p2p <a href="https://datproject.org/">Dat</a> protocol.</p>
-        <p>So why not visit something?</p>
-        <p>Enter Dat keys in the URL like this: <code>/:key/:path</code> or use the form below.</p>
         <p>
           <form onsubmit="return navigateUrl()">
             <div class="field has-addons">
               <div class="control is-expanded">
-                <input class="input" placeholder="dat://">            
+                <input class="input" placeholder="search">            
               </div>
               <div class="control">
-                <button class="button is-info">Go!</button>
+                <button class="button is-info" style="background: black;">explore</button>
               </div>
             </div>
           </form>
         </p>
         <p>
-          <small>
-            View <a href="https://github.com/garbados/dat-gateway">the source</a>.
-          </small>
         </p>
       </div>
     </div>
