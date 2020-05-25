@@ -4,6 +4,11 @@
   <title>futures</title>
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/bulma@0.7.4/css/bulma.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.css">
+  <style type="text/css">
+    .typed {
+      font-family: "Roboto", monospace;
+    }
+  </style>
   <script>
     function handleLoaded() {
       registerProtocol();
@@ -46,28 +51,30 @@
 <body onload="return handleLoaded()">
   <section class="section" style="padding: 10rem 10rem;">
     <div class="" style="max-width:480px">
-      <h1 class="title">portal directory</h1>
+      <h1 class="title typed">portal directory</h1>
 
-      <p class="subtitle">shortcuts</p>
+      <p class="subtitle typed">shortcuts</p>
       <ul>
-        <li>>&nbsp;&nbsp;<a onclick="return navigateUrl('dat://d0376bf19864c8cf3d25b3ecfe66d2b4d1d3fc675e57489a84eecc5cb4b3dc5d')">futures shoppe</a></li>
-        <li>>&nbsp;&nbsp;<i>your_shop_here</i></li>
+        <li class="typed">>&nbsp;&nbsp;<a onclick="return navigateUrl('dat://d0376bf19864c8cf3d25b3ecfe66d2b4d1d3fc675e57489a84eecc5cb4b3dc5d')">futures shoppe </a></li>
+        <li class="typed">>&nbsp;&nbsp;<i>your_shop_here</i></li>
       </ul>
       <div class="content">
         <p>
-          <form onsubmit="return navigateUrl()">
+          <form onsubmit="return navigateUrl()" style="padding-top: 50px;">
             <div class="field has-addons">
               <div class="control is-expanded">
-                <input class="input" placeholder="search">            
+                <input class="input" placeholder="search dat://">            
               </div>
+              <br />
+              <br />
+              <br />
               <div class="control">
-                <button class="button is-info" style="background: black;">explore</button>
+                <button class="button is-info typed" style="background: #222;">explore</button>
               </div>
             </div>
           </form>
         </p>
-        <p>
-        </p>
+        <canvas id='canvas'></canvas>
       </div>
     </div>
   </section>
